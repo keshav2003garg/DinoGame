@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.gameContainer {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../assets/bg.png);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+
+.scoreCount{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border: 2px solid black;
+    padding: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.gameOver{
+    visibility: hidden;
+    font-family: sans-serif;
+    font-size: 53px;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dino {
+    width: 195px;
+    height: 100px;
+    background-image: url(../assets/dino.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 10px;
+    left: 125px;
+}
+
+.obstacle {
+    width: 115px;
+    height: 75px;
+    background-image: url(../assets/dragon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 10px;
+    right: 0vw;
+}
+
+.animateDino {
+    animation: dino 0.6s linear;
+}
+
+.animateDinoHigh{
+    animation: dinoHigh 1s linear;
+}
+
+.animateDinoDeath{
+    animation: dinoDeath 2s linear;
+}
+
+.animateObstacle{
+    animation: obstacle 3s linear 0s infinite;
+}
+
+@keyframes dino {
+    0% {bottom: 0px;}
+    50% {bottom: 250px;}
+    100% {bottom: 0px;}
+}
+@keyframes dinoHigh {
+    0% {bottom: 0px;}
+    50% {bottom: 500px;}
+    100% {bottom: 0px;transform: rotate(360deg);}
+}
+@keyframes dinoDeath {
+    0% {bottom: 0px;}
+    20%{bottom: 200px;left: 200px;}
+    40%{bottom: 400px;left: 400px;}
+    60%{bottom: 200px;left: 600px;}
+    80%{bottom: 0px;left: 800px;}
+    100%{bottom: -200px;left: 1000px;transform: rotate(360deg);}
+}
+
+@keyframes obstacle{
+    0%{right: 0vw;}
+    25%{right: 25vw;}
+    50%{right: 50vw;}
+    75%{right: 75vw;}
+    100%{right: 100vw;}
+}
